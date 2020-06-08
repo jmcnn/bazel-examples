@@ -60,7 +60,8 @@ spec:
         stage('Checkout Sample Bazel Code ✅') {
             steps {
                 // git url: 'https://github.com/bazelbuild/examples.git'
-                checkout();
+                // checkout();
+                echo "code already checked out"
 
             }
         }

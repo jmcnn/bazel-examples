@@ -91,6 +91,16 @@ spec:
             }
         }
         
+        stage('Build CPP Tutorial App 🏗') {
+            steps {
+                
+                dir('cpp-tutorial/stage1') {
+                    sh 'bazel build  :hello-world'
+                    // archiveArtifacts 'bazel-bin/app/src/main/app*.apk'
+                }
+            }
+        }
+        
         // stage('Build Android NDK Sample App 🏗') {
         //     environment {
 
@@ -109,7 +119,6 @@ spec:
         //         }
         //     }
         // }
-        
 
     }   
 }

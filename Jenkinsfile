@@ -98,7 +98,7 @@ spec:
             steps {
                 
                 dir('cpp-tutorial/stage1') {
-                    sh 'bazel build  :hello-world'
+                    sh 'bazel build  //main:hello-world'
                     // archiveArtifacts 'bazel-bin/app/src/main/app*.apk'
                 }
             }

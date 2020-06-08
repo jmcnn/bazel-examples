@@ -92,6 +92,9 @@ spec:
         }
         
         stage('Build CPP Tutorial App 🏗') {
+            environment {
+                PATH = "${env.PATH}:/mnt/tool/bazel/3.1.0/lib/bazel/bin:"
+            }
             steps {
                 
                 dir('cpp-tutorial/stage1') {

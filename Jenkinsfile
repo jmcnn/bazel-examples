@@ -91,24 +91,24 @@ spec:
             }
         }
         
-        stage('Build Android NDK Sample App 🏗') {
-            environment {
+        // stage('Build Android NDK Sample App 🏗') {
+        //     environment {
 
-                ANDROID_SDK_ROOT = '/mnt/tool/android/sdk'
-                ANDROID_HOME="${env.ANDROID_SDK_ROOT}"
-                ANDROID_NDK_HOME    =   "${env.ANDROID_SDK_ROOT}/ndk-bundle"
-                 _JAVA_AWT_WM_NONREPARENTING = '1'
+        //         ANDROID_SDK_ROOT = '/mnt/tool/android/sdk'
+        //         ANDROID_HOME="${env.ANDROID_SDK_ROOT}"
+        //         ANDROID_NDK_HOME    =   "${env.ANDROID_SDK_ROOT}/ndk-bundle"
+        //          _JAVA_AWT_WM_NONREPARENTING = '1'
                  
-                PATH = "${env.PATH}:/mnt/tool/bazel/3.1.0/lib/bazel/bin:${env.ANDROID_SDK_ROOT}/tools:${env.ANDROID_SDK_ROOT}/platforms"
-            }
-            steps {
+        //         PATH = "${env.PATH}:/mnt/tool/bazel/3.1.0/lib/bazel/bin:${env.ANDROID_SDK_ROOT}/tools:${env.ANDROID_SDK_ROOT}/platforms"
+        //     }
+        //     steps {
                 
-                dir('android/ndk') {
-                    sh 'bazel build  //app/src/main:app --fat_apk_cpu=x86 --sandbox_debug --verbose_failures'
-                    archiveArtifacts 'bazel-bin/app/src/main/app*.apk'
-                }
-            }
-        }
+        //         dir('android/ndk') {
+        //             sh 'bazel build  //app/src/main:app --fat_apk_cpu=x86 --sandbox_debug --verbose_failures'
+        //             archiveArtifacts 'bazel-bin/app/src/main/app*.apk'
+        //         }
+        //     }
+        // }
         
 
     }   
